@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
 // if there is an ath problem
 // ALTER USER 'Jim'@'localhost' IDENTIFIED WITH mysql_native_password BY '@Main123';
 
+app.use(express.json());
+// Get all books
+
 app.get("/books", (req, res) => {
   const q = "SELECT * FROM books";
   db.query(q, (err, data) => {
@@ -27,11 +30,7 @@ app.get("/books", (req, res) => {
 
 app.post("/books", (req, res) => {
   const q = "INSERT INTO books ('title', 'desc', 'cover') VALUES (?)";
-  const values = [
-    "title from backend",
-    "desc from backend",
-    "cover from backend",
-  ];
+  const values = [req.body.title, req.body.desc, req.body.cover];
 
   db.query(q, [values], (err, data) => {
     if (err) return res.json(err);
