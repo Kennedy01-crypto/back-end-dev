@@ -17,7 +17,6 @@ function App() {
         <Route path="/add" element={<Add />} />
         <Route path="/update" element={<Update />} />
       </Routes>
-      <p>Hellos</p>
     </Router>
   );
 }
