@@ -31,11 +31,12 @@ export const Add = () => {
           " and cover: " +
           book.cover
       );
-      navigate("/"); // Redirect to the books page after adding a book
     } catch (err) {
       console.error("Error adding book:", err);
     } finally {
       // Any cleanup or final actions can be done here
+      navigate("/");
+      // Redirect to the books page after adding a book
     }
   };
 

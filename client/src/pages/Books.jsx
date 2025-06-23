@@ -62,7 +62,7 @@ export const Books = (props) => {
               Delete
             </button>
             <button className="mt-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">
-              <Link to="/update">Update</Link>{" "}
+              <Link to={`/update/${book.id}`}>Update</Link>{" "}
             </button>
           </div>
         ))}
